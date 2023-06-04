@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import logo from "../icons/logo-removebg-preview.png"
-
+import "./NavBar.css"
 function NavBar() {
   const navbarStyle = {
     backgroundColor: 'transparent',
@@ -16,8 +16,8 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/the-journey-of-certainty'>The journey of certainty</Nav.Link>
-            <Nav.Link as={Link} to='/rhlet-yaqeen'>part 01</Nav.Link>
-            <Nav.Link as={Link} to='/rhlet-yaqeen'>part 02</Nav.Link>                                         
+            <Nav.Link as={Link} to='/chains'>Chains</Nav.Link>
+            <Nav.Link as={Link} to='/stories'>Stories</Nav.Link>                                         
             
             <Nav.Link as={Link} to='/login'>Login</Nav.Link>
           </Nav>
