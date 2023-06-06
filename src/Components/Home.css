@@ -1,23 +1,31 @@
 .home{
     display: flex;
     flex-direction: column;
-   
+
 
 }
 
 .first-div {
-    width: 60%;
+    width: 50%;
     height: 380px;
-    margin: 50px 0px 50px 0px;
-    padding: 20px 140px 20px 20px;
+    margin: 50px 20px 50px 20px;
+    padding: 20px;
     font-size: 18px;
-    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-    background: rgba(21, 182, 185, 0.5);
-    border:double 11px #111
+    font-weight: 600;
+    background-image: url('../images/bg11.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+
+    
+    color: #3d0427;
+
+
+
 }
 
 .s-div {
-    border:double 11px #111;
     width: 60%;
     height: 380px;
     display: flex;
@@ -25,12 +33,18 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin: 50px 0px 50px 0px;
-    padding: 20px 20px 20px 140px;
+    width: 50%;
+    height: 380px;
+    margin: 50px 20px 50px 20px;
+    padding: 20px;
     font-size: 18px;
-    background: rgba(21, 182, 185, 0.5);
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
- 
+    font-weight: 600;
+    background-image: url('../images/bg11.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    color: #3d0427;
 
 }
 .first-div{
@@ -41,7 +55,7 @@
 .s-div{
     position: absolute;
     right: 0;
-    top: 400px;
+    top: 500px;
 }
 
 
@@ -49,7 +63,12 @@ h2 {
     display: flex;
     justify-content: center;
     font-weight: 700 !important;
-    color: #fff;
+    -webkit-background-clip: text !important;
+background-clip: text !important;
+color: transparent !important;
+background-image: linear-gradient(to right,#1972a4 ,#ab3f82,#ab3f82) !important;
+margin-right: 20px !important;
+
 }
 
 .first-div span,
@@ -62,7 +81,27 @@ h2 {
 .s-div a {
     margin-left: 18px;
     text-decoration: none;
-    color: #fff;
-    font-weight: 600;
+    font-weight: 700;
+    -webkit-background-clip: text !important;
+background-clip: text !important;
+color: transparent !important;
+background-image: linear-gradient(to right,#1972a4 ,#2dc4cb,#73f7dd) !important;
+margin-right: 20px !important;
     
+}
+.bg-img img{
+width: 100%;
+}
+.img2{
+    position: absolute;
+    top:0px;
+    right:60px;
+    width: 400px;
+}
+.img3{
+    position: absolute;
+    top:1084px;
+    left:250px;
+    width: 209px;
+
 }

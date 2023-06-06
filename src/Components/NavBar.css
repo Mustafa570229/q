@@ -1,6 +1,35 @@
 .navbar {
+    background-image: url('../images/bg11.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.navbar .link {
     font-weight: 500 !important;
     font-size: 20px !important;
-    color: rgb(21, 183, 185) !important;
     /* border-bottom: 5px solid rgba(21, 182, 185, 0.5); */
+
+}
+
+.nav-link {
+    /* color: #1972a4 !important; */
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    background-image: linear-gradient(to right, #1972a4, #2dc4cb, #73f7dd) !important;
+    margin-right: 20px !important;
+
+}
+
+.nav-link:nth-child(5) {
+    color: #ab3f82 !important;
+    margin-left: 200px;
+    width: 100px;
+
+
+
 }

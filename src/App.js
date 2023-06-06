@@ -10,6 +10,8 @@ import Showing from './Components/Showing';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from "./firebase";
 import Stories from './pages/Stories';
+import Mix from './pages/Mix';
+
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -32,6 +34,8 @@ const App = () => {
           <Route path='/the-journey-of-certainty' element={<RhletAlyaqeen />} />
           <Route path='/chains' element={<Chains />} />
           <Route path='/stories' element={<Stories />} />
+          <Route path='/mix' element={<Mix />} />
+
 
           {data.map((item) => (
             <Route key={item.id} path={`/chains/${item.id}`} element={<Showing />} />
