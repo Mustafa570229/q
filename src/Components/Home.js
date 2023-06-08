@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 // import TrackVisibility from 'react-on-screen';
 import 'animate.css';
 import img1 from "../images/bg5.png"
-import img2 from "../images/22.png"
 import img3 from "../images/c1.png"
 import Contact from './Contact';
 import Footer from './Footer';
+import { ShowingStories } from './ShowStories';
 
 
 
@@ -32,8 +32,6 @@ const Home = () => {
               </p>
               <span>To read this series <Link to='/the-journey-of-certainty'>Click here</Link></span>
             </div>
-           
-        <img className='img2' src={img2} alt='...'/>
         <img className='img3' src={img3} alt='...'/>
 
 
@@ -55,7 +53,9 @@ const Home = () => {
             </div>
       </div>
       <Contact/>
-
+<div className='show-stories'>
+<ShowingStories/>
+</div>
 <Footer/>
 
     </div>

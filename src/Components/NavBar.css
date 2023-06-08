@@ -22,7 +22,11 @@
     color: transparent !important;
     background-image: linear-gradient(to right, #1972a4, #2dc4cb, #73f7dd) !important;
     margin-right: 20px !important;
+    transition: 0.5s ease !important ;
 
+}
+.nav-link:hover{
+    color: #ab3f82 !important;
 }
 
 .nav-link:nth-child(5) {
