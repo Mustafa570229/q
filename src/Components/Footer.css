@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     text-align: center;
     box-shadow:inset 1px 0px 13px #00000023;
-    padding: 50px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
 }
 .images {
     display: flex;
@@ -13,7 +13,7 @@
     width: 50%;
 }
 .footer img {
-    width: 60px;
+    width: 50px;
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -21,11 +21,16 @@
     transform: scale(0.8);
 }
 .copyright {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: #1972a4;
-    padding: 12px;
+    padding: 10px;
     box-shadow:inset 1px 1px 13px #00000023 ;
+}
+.copyright a{
+    text-decoration: none;
+    color: #2e5258;
+    margin-left: 2px;
 }
 .socialmedia {
     display: flex;
@@ -35,12 +40,60 @@
 .socialmedia a {
     text-decoration: none;
     color: #1972a4;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     transition: 0.5s ease;
-    padding: 6px;
+    padding: 2px;
 }
 .socialmedia a:hover {
     color:#feb554;
-    transform: scale(0.8);
+    transform: scale(0.9);
+}
+@media (max-width:500px){
+    .footer {
+        width: 100%;
+        background-image: url('../images/bg3.png');
+        background-repeat: no-repeat;
+        text-align: center;
+        box-shadow:inset 1px 0px 13px #00000023;
+        padding: 30px 0px 0px 0px;
+    }
+    .images {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px auto;
+        width: 80%;
+    }
+    .footer img {
+        width: 40px;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    .footer img:hover {
+        transform: scale(0.8);
+    }
+    .copyright {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1972a4;
+        padding: 6px;
+        box-shadow:inset 1px 1px 13px #00000023 ;
+    }
+    .socialmedia {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .socialmedia a {
+        text-decoration: none;
+        color: #1972a4;
+        font-size: 18px;
+        font-weight: 700;
+        transition: 0.5s ease;
+        padding: 2px;
+    }
+    .socialmedia a:hover {
+        color:#feb554;
+        transform: scale(0.8);
+    }
 }

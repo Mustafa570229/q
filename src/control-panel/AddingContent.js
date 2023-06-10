@@ -4,6 +4,7 @@ import { collection, deleteDoc, doc, onSnapshot, setDoc, serverTimestamp, getDoc
 import { Alert, Button, Form } from "react-bootstrap";
 import { FaTrash } from 'react-icons/fa';
 import "./AddingContent.css";
+import Loggingout from "../Components/LoggintOut";
 
 function AddingContent() {
   const [newTitle, setNewTitle] = useState('');
@@ -127,6 +128,7 @@ function AddingContent() {
             {!success && <Alert variant="success">successfully</Alert>}
           </div>
         </Form>
+        <Loggingout/>
       </div>
 
       <div className="panel-showing">

@@ -11,6 +11,8 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from "./firebase";
 import Stories from './pages/Stories';
 import Mix from './pages/Mix';
+import Footer from './Components/Footer';
+import RequireAuth from './context/RequiredAuth';
 
 
 const App = () => {
@@ -40,10 +42,9 @@ const App = () => {
           {data.map((item) => (
             <Route key={item.id} path={`/chains/${item.id}`} element={<Showing />} />
           ))}
-          <Route path='/control-panel' element={<AddingContent />} />
+          <Route path='/control-panel' element={<RequireAuth><AddingContent /></RequireAuth> } />
           <Route path='/login' element={<Login />} />
         </Routes>
-
       </Router>
     </div>
   );

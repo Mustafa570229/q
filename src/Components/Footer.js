@@ -32,7 +32,8 @@ const Footer = () => {
 
 
 
-      <div className='copyright'>© 2020 Copyright: MDBootstrap.com</div>
+      <div className='copyright'>© 2023 Copyright: 
+      <a href='https://mustafaalabohasne.online/' target='_blank' rel="noreferrer">mustafaalabohasne.online</a></div>
 
     </div>
   )

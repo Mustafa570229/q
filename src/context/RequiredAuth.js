@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../context/ContextFirebase";
+import { useAuth } from "./ContextApi";
 
 const RequireAuth = ({ children }) => {
   const { currentUser } = useAuth();

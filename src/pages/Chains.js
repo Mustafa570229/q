@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 import "./Chains.css"
+import img from "../images/bg1.png"
+import Footer from './../Components/Footer';
 
 const Chains = () => {
   const [collectionNames, setCollectionNames] = useState([]);
@@ -17,18 +19,22 @@ const Chains = () => {
 
   const handleShow = (name) => {
     localStorage.setItem('coll-name', JSON.stringify(name));
-    
-    
+
+
   };
 
   return (
+    <>
     <div className='chains'>
       {collectionNames.map((coll, index) => (
-        <Link to={coll.id} key={index} onClick={() => handleShow(coll.name)}>
-          {coll.name}
-        </Link>
+        <div className='chains-div'>
+          <img src={img} alt='...'/>
+          <Link to={coll.id} key={index} onClick={() => handleShow(coll.name)}>
+            {coll.name}
+          </Link></div>
       ))}
     </div>
+    </>
   );
 };
 

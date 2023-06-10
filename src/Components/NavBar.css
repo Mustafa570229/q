@@ -8,12 +8,10 @@
 .navbar .link {
     font-weight: 500 !important;
     font-size: 20px !important;
-    /* border-bottom: 5px solid rgba(21, 182, 185, 0.5); */
 
 }
 
 .nav-link {
-    /* color: #1972a4 !important; */
     font-size: 24px !important;
     font-weight: 800 !important;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
@@ -33,7 +31,82 @@
     color: #ab3f82 !important;
     margin-left: 200px;
     width: 100px;
+}
+@media (max-width: 1111px) and (min-width: 500px){
+    .navbar {
+        background-image: url('../images/bg11.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    .navbar-brand img{
+        width: 140px;
+    }
+    .navbar .link {
+        font-weight: 500 !important;
+        font-size: 16px !important;
+    
+    }
+    
+    .nav-link {
+        font-size: 20px !important;
+        font-weight: 800 !important;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        color: transparent !important;
+        background-image: linear-gradient(to right, #1972a4, #2dc4cb, #73f7dd) !important;
+        margin-right: 20px !important;
+        transition: 0.5s ease !important ;
+    
+    }
+    .nav-link:hover{
+        color:  #ab3f82 !important;
+    }
+    
+    .nav-link:nth-child(5) {
+        color: #ab3f82 !important;
+        margin-left: 10px;
+        width: 100px;
+    }
+}
 
 
 
+@media (max-width:500px){
+    .navbar {
+        background-image: url('../images/bg11.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    
+    .navbar .link {
+        font-weight: 500 !important;
+        font-size: 16px !important;
+    
+    }
+    
+    .nav-link {
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        color: transparent !important;
+        background-image: linear-gradient(to right, #1972a4, #2dc4cb, #73f7dd) !important;
+        margin-right: 20px !important;
+        transition: 0.5s ease !important ;
+        border-bottom: 1px solid #999;
+    
+    }
+    .nav-link:hover{
+        color: #ab3f82 !important;
+    }
+    
+    .nav-link:nth-child(5) {
+        color: #1972a4 !important;
+        margin-left: 0px;
+        width: auto;
+    } 
 }

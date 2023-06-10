@@ -1,22 +1,59 @@
 .chains{
-    width: 80%;
-    display: flex;
+    width: 100%;
     margin: auto;
-    flex-wrap: wrap;
+    border-top: 5px solid #1972a4;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.chains-div{
+   width: 30%;
 }
 .chains a{
     text-decoration: none;
     font-size: 22px;
     font-weight: 700;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 50px;
-    color: #00000098;
-    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5),-2px -2px 2px rgba(0, 0, 0, 0.1);
-    transition: 0.5s ease;
-    background-color: rgba(21, 182, 185, 0.2);
+  color: #1972a4;
+  transition: 0.4s ease;
 }
 .chains a:hover{
-    color: antiquewhite;
-   background: #1111115e;
+   color: #ab3f82;
+}
+.chains img{
+    width: 50px;
+    margin-right: 10px;
+}
+
+@media (max-width:500px){
+    .chains{
+        width: 100%;
+        border-top: 5px solid #1972a4;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        text-align: start;
+
+    }
+    .chains-div{
+       width: 100%;
+       padding:6px;
+
+    }
+    .chains a{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 700;
+      color: #1972a4;
+      transition: 0.4s ease;
+    }
+    .chains a:hover{
+       color: #ab3f82;
+    }
+    .chains img{
+        width: 30px;
+        margin-right: 5px;
+    }
+    
 }
