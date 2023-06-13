@@ -2,9 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import Collapse from 'react-bootstrap/Collapse';
-import { FaArrowLeft } from 'react-icons/fa';
-import { FaArrowRight } from 'react-icons/fa';
-
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import './Page.css';
 
 const RhletAlyaqeen = () => {
@@ -57,8 +55,8 @@ const RhletAlyaqeen = () => {
   return (
     <div className='page'>
       <div className='text'>
-        <h4 className='title'>{selectedContent ? selectedContent.title : data[0]?.title}</h4>
-        <pre className='pre'>{selectedContent ? selectedContent.content : data[0]?.content}</pre>
+        <h1 className='title'>{selectedContent?.title || data[0]?.title}</h1>
+        <pre className='pre'>{selectedContent?.content || data[0]?.content}</pre>
       </div>
       <button
         className={!open ? 'btn1' : 'btn2'}

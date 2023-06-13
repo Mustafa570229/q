@@ -14,7 +14,7 @@ function AddingContent() {
   const [news, setNews] = useState([]);
 
   const [newCollection, setNewCollection] = useState('');
-  const [CollectionNames, setCollectionNames] = useState([]);
+  const [collections, setCollections] = useState([]);
   const [currentCollection, setCurrentCollection] = useState('');
   const [hasData, setHasData] = useState(false);
 
@@ -28,7 +28,7 @@ function AddingContent() {
           doc(collection(db, newCollection), date.getTime().toString()),
           { title: newTitle, content: newContent, createdAt: serverTimestamp() }
         );
-        if (!CollectionNames.some((coll) => coll.name === newCollection)) {
+        if (!collections.some((coll) => coll.name === newCollection)) {
           await setDoc(
             doc(collection(db, 'collection-names'), date.getTime().toString()),
             { name: newCollection, createdAt: serverTimestamp() }
@@ -48,7 +48,7 @@ function AddingContent() {
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'collection-names'), (snapshot) => {
-      setCollectionNames(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setCollections(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     });
     return () => unsubscribe();
   }, []);
@@ -73,7 +73,6 @@ function AddingContent() {
   const handleDeleteC = async (id, name) => {
     try {
       const collectionRef = collection(db, name);
-
       const querySnapshot = await getDocs(collectionRef);
       const hasData = querySnapshot.size > 0;
       setHasData(hasData);
@@ -89,7 +88,6 @@ function AddingContent() {
   return (
     <div className="news-panel">
       <div className="news-upload-panel">
-
         <Form onSubmit={handleSubmit}>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Label className='adding-head-panel'>Enter collection</Form.Label>
@@ -98,85 +96,74 @@ function AddingContent() {
               className="mb-5"
               placeholder='Collection Name'
               value={newCollection}
-              onChange={(event) => setNewCollection(event.target.value)}
+              onChange={({ target }) => setNewCollection(target.value)}
             />
 
             <Form.Label className='adding-head-panel'>Enter a new Title</Form.Label>
-            {!newTitle && !loading && <Alert variant="danger">enter a title</Alert>}
+            {!newTitle && !loading && <Alert variant="danger">Enter a title</Alert>}
             <Form.Control
               type='text'
               className="mb-5"
               placeholder='Title'
               value={newTitle}
-              onChange={(event) => setNewTitle(event.target.value)}
+              onChange={({ target }) => setNewTitle(target.value)}
             />
 
             <Form.Label className='adding-head-panel'>Enter a new Content</Form.Label>
-            {!newContent && !loading && <Alert variant="danger">enter a Content</Alert>}
+            {!newContent && !loading && <Alert variant="danger">Enter a content</Alert>}
             <Form.Control
               as="textarea"
               rows={3}
               placeholder='Content'
               value={newContent}
-              onChange={(event) => setNewContent(event.target.value)}
+              onChange={({ target }) => setNewContent(target.value)}
             />
           </Form.Group>
           <div>
             <Button variant="primary" type='submit' className='mb-3'>
               Add to my web page
             </Button>
-            {!success && <Alert variant="success">successfully</Alert>}
+            {!success && <Alert variant="success">Successfully added</Alert>}
           </div>
         </Form>
         <Loggingout/>
       </div>
 
       <div className="panel-showing">
-
-        {CollectionNames?.map((collection, index) => (
-          <div key={index} className="collections-names">
-
+        {collections.map((collection, index) => (
+          <div key={collection.id} className="collections-names">
             <span>{collection.name}</span>
-            <span > {collection.createdAt?.toDate().toLocaleString()}</span>
-
-            <span >
+            <span>{collection.createdAt?.toDate().toLocaleString()}</span>
+            <span>
               <FaTrash onClick={() => handleDeleteC(collection.id, collection.name)} />
             </span>
-
           </div>
         ))}
-        {hasData && <Alert variant="danger">
-          Delete all data in collection.Then remove collection from list.</Alert>}
-
-
+        {hasData && <Alert variant="danger">Delete all data in collection. Then remove collection from the list.</Alert>}
 
         <Form.Select
           aria-label="Default select example"
-          onChange={(e) => setCurrentCollection(e.target.value)}
+          onChange={({ target }) => setCurrentCollection(target.value)}
         >
-          <option >Select a Collection</option>
-          {CollectionNames?.map((coll, index) => (
-            <option key={index} value={coll.name}>
+          <option>Select a Collection</option>
+          {collections.map((coll, index) => (
+            <option key={coll.id} value={coll.name}>
               {coll.name}
             </option>
           ))}
         </Form.Select>
 
-
         <div>
           {news.map((item, index) => (
-            <div key={index} className='content-panel'>
-
-              <span >{item.title}</span>
-              <span > {item.createdAt?.toDate().toLocaleString()}</span>
+            <div key={item.id} className='content-panel'>
+              <span>{item.title}</span>
+              <span>{item.createdAt?.toDate().toLocaleString()}</span>
               <span>
                 <FaTrash onClick={() => handleDelete(item.id)} />
               </span>
-
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

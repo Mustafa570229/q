@@ -5,25 +5,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import logo from '../icons/kyoo-logo3-removebg-preview.png';
 import './NavBar.css';
-import { useAuth } from '../context/ContextApi';
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false);
-  const {  currentUser } = useAuth();
-
-  const navbarStyle = {
-    backgroundColor: 'transparent',
-  };
 
   const toggleNavbar = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Navbar style={navbarStyle} expand="md" expanded={expanded}>
+    <Navbar style={{ backgroundColor: 'transparent' }} expand="md" expanded={expanded}>
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <img src={logo} alt="..." />
+          <img src={logo} alt="..." />{' '}
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleNavbar} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -40,7 +34,6 @@ function NavBar() {
             <Nav.Link as={Link} to="/mix">
               Mix
             </Nav.Link>
-            
             <Nav.Link as={Link} to="/control-panel">
               Login
             </Nav.Link>

@@ -5,6 +5,7 @@
     overflow: hidden;
     padding: 20px;
     border: 5px solid #73f7dd;
+    background: #ffffff6c;
 
 }
 
@@ -150,6 +151,8 @@ pre {
         overflow: hidden;
         padding: 0px;
         border: 2px solid #73f7dd;
+    background: #ffffff98;
+
 
     }
 

@@ -2,9 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import Collapse from 'react-bootstrap/Collapse';
-import { FaArrowLeft } from 'react-icons/fa';
-import { FaArrowRight } from 'react-icons/fa';
-
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const Showing = () => {
   const [data, setData] = useState([]);
@@ -16,25 +14,24 @@ const Showing = () => {
   useEffect(() => {
     const storedElement = localStorage.getItem('coll-name');
     if (storedElement) {
-        setName(JSON.parse(storedElement));
+      setName(JSON.parse(storedElement));
     }
   }, []);
-  const handleDelete = () => {
-    localStorage.removeItem('name');
-    setName('');
-  };
 
   useEffect(() => {
+    const handleDelete = () => {
+      localStorage.removeItem('name');
+      setName('');
+    };
+
     const fetchData = async () => {
       try {
-        if(name!==''){
-            const querySnapshot = await getDocs(collection(db, name));
-            const newData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-            setData(newData);
-            handleDelete()
+        if (name !== '') {
+          const querySnapshot = await getDocs(collection(db, name));
+          const newData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+          setData(newData);
+          handleDelete();
         }
-       
-       
       } catch (error) {
         console.error('Error retrieving data:', error);
       }
@@ -57,8 +54,8 @@ const Showing = () => {
     });
   };
 
-  const handleOutsideClick = (event) => {
-    if (listRef.current && !listRef.current.contains(event.target)) {
+  const handleOutsideClick = ({ target }) => {
+    if (listRef.current && !listRef.current.contains(target)) {
       setOpen(false);
     }
   };
@@ -71,10 +68,10 @@ const Showing = () => {
   }, []);
 
   return (
-    <div className='page'>
-      <div className='text'>
-        <h4 className='title'>{selectedContent ? selectedContent.title : data[0]?.title}</h4>
-        <pre className='pre'>{selectedContent ? selectedContent.content : data[0]?.content}</pre>
+    <div className="page">
+      <div className="text">
+        <h4 className="title">{selectedContent ? selectedContent.title : data[0]?.title}</h4>
+        <pre className="pre">{selectedContent ? selectedContent.content : data[0]?.content}</pre>
       </div>
       <button
         className={!open ? 'btn1' : 'btn2'}
@@ -85,8 +82,8 @@ const Showing = () => {
         {!open ? <FaArrowLeft size={30} /> : <FaArrowRight size={30} />}
       </button>
       <Collapse in={open}>
-        <div ref={listRef} className='list' id="example-collapse-text">
-          <ul className='custom-scrollbar'>
+        <div ref={listRef} className="list" id="example-collapse-text">
+          <ul className="custom-scrollbar">
             {data.map((item) => (
               <li
                 key={item.id}

@@ -18,7 +18,7 @@
     color: #4d0531;
     text-align: center;
 }
-h2 {
+h1 {
     display: flex;
     justify-content: center;
     font-weight: 700 !important;
@@ -44,22 +44,8 @@ background-clip: text !important;
 color: transparent !important;
 background-image: linear-gradient(to right,#1972a4 ,#2dc4cb,#73f7dd) !important;
 margin-right: 20px !important;
-    
 }
-.contact-div{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 50px;
-}
-.contact-div .explain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    font-size: 22px;
-    font-weight: 600;
-    color: #3d0427;
-}
+
 @media (max-width:500px){
     .home{
         display: flex;

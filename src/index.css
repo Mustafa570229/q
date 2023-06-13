@@ -6,11 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
- 
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  background-image: url('./icons/seamless-white-round-geometric-patterned-background_53876-101076.avif');
 
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  /* background-image: url('./icons/seamless-white-round-geometric-patterned-background_53876-101076.avif'); */
+  /* background-color: rgba(0, 0, 0, 0.1) !important */
 }
 
 code {

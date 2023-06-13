@@ -10,7 +10,9 @@
     font-size: 20px !important;
 
 }
-
+ img{
+    filter: drop-shadow(1px 1px 0px #0a0a0a);
+}
 .nav-link {
     font-size: 24px !important;
     font-weight: 800 !important;

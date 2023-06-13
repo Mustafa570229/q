@@ -1,42 +1,40 @@
-import React from 'react'
-import "./Footer.css"
-import telegram from "../images/telegram.png"
-import linkedin from "../images/linkedin.png"
-import twitter from "../images/twitter.png"
-import web from "../images/web1.png"
+import React from 'react';
 import { Link } from 'react-router-dom';
-
+import "./Footer.css";
+import telegramIcon from "../images/telegram.png";
+import linkedinIcon from "../images/linkedin.png";
+import twitterIcon from "../images/twitter.png";
+import webIcon from "../images/web1.png";
 
 const Footer = () => {
   return (
-    <div className='footer'>
-      <div className='socialmedia'>
-
-        <Link to='/the-journey-of-certainty'>The journey of certainty</Link>
-        <Link to='/chains'>Chains</Link>
-        <Link to='/stories'>stories</Link>
-        <Link to='/mix'>Mix</Link>
-
+    <div className="footer">
+      <div className="footer-links">
+        <Link to="/the-journey-of-certainty">The Journey of Certainty</Link>
+        <Link to="/chains">Chains</Link>
+        <Link to="/stories">Stories</Link>
+        <Link to="/mix">Mix</Link>
       </div>
-      <div className='images'>
-        
-        <a href='https://mustafaalabohasne.online/' target='_blank' rel="noreferrer"><img src={web} alt='...' /></a>
-        <a href='https://mustafaalabohasne.online/' target='_blank' rel="noreferrer"><img src={linkedin} alt='...' /></a>
-        <a href='https://mustafaalabohasne.online/' target='_blank' rel="noreferrer"><img src={telegram} alt='...' /></a>
-        <a href='https://mustafaalabohasne.online/' target='_blank' rel="noreferrer"><img src={twitter} alt='...' /></a>
-
-        
-        
-        
+      <div className="footer-images">
+        <a href="https://mustafaalabohasne.online/" target="_blank" rel="noreferrer">
+          <img src={webIcon} alt="Web" />
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+          <img src={linkedinIcon} alt="LinkedIn" />
+        </a>
+        <a href="https://web.telegram.org/" target="_blank" rel="noreferrer">
+          <img src={telegramIcon} alt="Telegram" />
+        </a>
+        <a href="https://twitter.com/alabohasne" target="_blank" rel="noreferrer">
+          <img src={twitterIcon} alt="Twitter" />
+        </a>
       </div>
-
-
-
-      <div className='copyright'>© 2023 Copyright: 
-      <a href='https://mustafaalabohasne.online/' target='_blank' rel="noreferrer">mustafaalabohasne.online</a></div>
-
+      <div className="footer-copyright">
+        <span>&copy; 2023</span> 
+        <a href="https://mustafaalabohasne.online/" target="_blank" rel="noreferrer">mustafaalabohasne.online</a>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
